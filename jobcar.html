@@ -1,132 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JhansiTop Cab Service</title>
-  <link rel="stylesheet" href="style.css">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
 </head>
-<body>
+
+<body class="bg-slate-100 text-slate-900 font-sans">
 
 <!-- NAVBAR -->
-<header class="navbar">
-  <div class="logo">JHANSITOP CAB SERVICE</div>
-  <nav>
-    <a class="active">Home</a>
-    <a>Services</a>
-    <a>Our Fleet</a>
-    <a>Pricing</a>
-    <a>Contact</a>
-  </nav>
-  <button class="book-btn">Book Now</button>
+<header class="bg-white border-b">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <div class="text-blue-700 font-semibold tracking-wide">
+      JHANSITOP CAB SERVICE
+    </div>
+
+    <nav class="hidden md:flex gap-8 text-sm text-slate-600">
+      <a class="text-blue-600 font-medium">Home</a>
+      <a class="hover:text-blue-600 transition">Services</a>
+      <a class="hover:text-blue-600 transition">Our Fleet</a>
+      <a class="hover:text-blue-600 transition">Pricing</a>
+      <a class="hover:text-blue-600 transition">Contact</a>
+    </nav>
+
+    <button class="bg-yellow-400 hover:bg-yellow-500 transition px-5 py-2 rounded-full text-sm font-semibold">
+      Book Now
+    </button>
+  </div>
 </header>
 
 <!-- HERO -->
-<section class="hero">
-  <span class="badge">⭐ Trusted by 10,000+ Happy Travelers</span>
-  <h1>Jhansi's Most Trusted<br><span>Cab & Rental Service</span></h1>
-  <p>Reliable, clean, and safe travel across Jhansi and beyond.</p>
+<section class="bg-gradient-to-br from-slate-900 to-blue-900 text-white text-center py-28 px-4">
+  <span class="inline-flex items-center gap-2 bg-blue-800/70 px-4 py-1 rounded-full text-sm mb-6">
+    ⭐ Trusted by 10,000+ Customers
+  </span>
 
-  <div class="hero-actions">
-    <a class="primary">📞 Call 8707204178</a>
-    <a class="secondary">Our Services</a>
+  <h1 class="text-4xl md:text-5xl font-semibold leading-tight">
+    Jhansi's Most Trusted <br>
+    <span class="text-blue-400">Cab & Rental Service</span>
+  </h1>
+
+  <p class="max-w-xl mx-auto mt-5 text-slate-300 text-base">
+    Reliable, clean and professional cab services across Jhansi and nearby cities.
+  </p>
+
+  <div class="mt-8 flex justify-center gap-4">
+    <a class="bg-blue-600 hover:bg-blue-700 transition px-7 py-3 rounded-lg font-medium">
+      Call 8707204178
+    </a>
+    <a class="border border-white/60 hover:bg-white hover:text-slate-900 transition px-7 py-3 rounded-lg font-medium">
+      View Services
+    </a>
+    <a href="tel:8707204178">Call Now</a>
+    <a href="https://wa.me/918707204178?text=Hello%20I%20want%20to%20book%20a%20cab"
+   target="_blank">
+   Book on WhatsApp
+   </a>
+
   </div>
 </section>
 
 <!-- BOOKING CARD -->
-<section class="booking-wrapper">
-  <div class="booking-card">
-    <div class="booking-header">
-      <h2>Quick Booking</h2>
-      <span class="status">● Active 24/7</span>
+<section class="-mt-24 px-4">
+  <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl p-8">
+    <div class="flex justify-between items-center mb-6">
+      <h2 class="text-lg font-semibold">Quick Booking</h2>
+      <span class="text-green-600 text-sm font-medium">● Available 24/7</span>
     </div>
 
-    <div class="form-grid">
-      <input placeholder="📍 Where from?" />
-      <input placeholder="📍 Where to?" />
-      <input type="datetime-local" />
-      <input placeholder="+91 8707..." />
+    <div class="grid md:grid-cols-2 gap-5">
+      <input class="border rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        placeholder="Pickup location">
+
+      <input class="border rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        placeholder="Drop location">
+
+      <input type="datetime-local"
+        class="border rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+      <input class="border rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        placeholder="Mobile number">
     </div>
 
-    <button class="confirm-btn">CONFIRM RIDE 🚗</button>
-    <p class="note">Instant confirmation · No hidden fees</p>
+    <button
+      class="mt-6 w-full bg-blue-600 hover:bg-blue-700 transition text-white py-4 rounded-xl font-semibold tracking-wide">
+      CONFIRM RIDE
+    </button>
+
+    <p class="text-center text-sm text-slate-500 mt-3">
+      Instant confirmation · Transparent pricing
+    </p>
   </div>
 </section>
 
 <!-- WHY CHOOSE US -->
-<section class="why">
-  <h2>Why Choose Us?</h2>
-  <p>We strive to provide the best travel experience.</p>
+<section class="py-24 px-4 text-center">
+  <h2 class="text-3xl font-semibold">Why Choose Us</h2>
+  <p class="text-slate-500 mt-3 max-w-xl mx-auto">
+    We focus on comfort, safety, and reliability to deliver a premium travel experience.
+  </p>
 
-  <div class="why-cards">
-    <div class="why-card">
-      ⏰
-      <h3>24/7 Availability</h3>
-      <p>Drivers available round the clock.</p>
+  <div class="mt-14 grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+    <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition">
+      <h3 class="font-semibold text-lg">24/7 Availability</h3>
+      <p class="text-slate-500 text-sm mt-3">
+        Cabs available anytime, day or night.
+      </p>
     </div>
-    <div class="why-card">
-      🛡️
-      <h3>Safe & Secure</h3>
-      <p>GPS tracked and verified drivers.</p>
-    </div>
-    <div class="why-card">
-      ✅
-      <h3>Best Rates</h3>
-      <p>No hidden charges.</p>
-    </div>
-  </div>
-</section>
 
-<!-- TESTIMONIALS -->
-<section class="testimonials">
-  <h2>Happy Customers</h2>
+    <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition">
+      <h3 class="font-semibold text-lg">Safe & Secure</h3>
+      <p class="text-slate-500 text-sm mt-3">
+        GPS-enabled vehicles and verified drivers.
+      </p>
+    </div>
 
-  <div class="reviews">
-    <div class="review-card">
-      ⭐⭐⭐⭐⭐
-      <p>"Best cab service, driver was polite and on time."</p>
-      <strong>Rahul Sharma</strong><br><span>Delhi</span>
-    </div>
-    <div class="review-card">
-      ⭐⭐⭐⭐⭐
-      <p>"Very clean cars and professional drivers."</p>
-      <strong>Priya Patel</strong><br><span>Mumbai</span>
-    </div>
-    <div class="review-card">
-      ⭐⭐⭐⭐☆
-      <p>"Reasonable pricing and safe driving."</p>
-      <strong>Amit Verma</strong><br><span>Bangalore</span>
+    <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition">
+      <h3 class="font-semibold text-lg">Transparent Pricing</h3>
+      <p class="text-slate-500 text-sm mt-3">
+        Fair rates with no hidden charges.
+      </p>
     </div>
   </div>
 </section>
 
 <!-- CTA -->
-<section class="cta">
-  <h2>Ready to book your ride?</h2>
-  <p>Get 10% off on your first outstation trip</p>
-  <div class="hero-actions">
-    <a class="secondary">Contact Us</a>
-    <a class="primary">📞 Call Now</a>
+<section class="bg-blue-600 text-white py-20 text-center px-4">
+  <h2 class="text-3xl font-semibold">Ready to book your ride?</h2>
+  <p class="mt-3 text-blue-100">
+    Book now and enjoy reliable travel with professional drivers.
+  </p>
+
+  <div class="mt-8 flex justify-center gap-4">
+    <button
+      class="bg-white text-blue-600 hover:bg-slate-100 transition px-7 py-3 rounded-lg font-medium">
+      Contact Us
+    </button>
+    <button
+      class="border border-white hover:bg-white hover:text-blue-600 transition px-7 py-3 rounded-lg font-medium">
+      Call Now
+    </button>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer>
-  <div class="footer-grid">
+<footer class="bg-slate-900 text-slate-400 py-14 px-4">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-10">
     <div>
-      <h3>JhansiTop Cab Service</h3>
-      <p>Reliable rides available 24/7.</p>
+      <h3 class="text-white font-semibold">JhansiTop Cab Service</h3>
+      <p class="text-sm mt-3">
+        Reliable and professional cab services available 24/7.
+      </p>
     </div>
+
     <div>
-      <h4>Quick Links</h4>
-      <p>Home · Services · Pricing · Contact</p>
+      <h4 class="text-white font-medium">Quick Links</h4>
+      <p class="text-sm mt-3">
+        Home · Services · Pricing · Contact
+      </p>
     </div>
+
     <div>
-      <h4>Contact</h4>
-      <p>Jhansi, UP<br>📞 8707204178</p>
+      <h4 class="text-white font-medium">Contact</h4>
+      <p class="text-sm mt-3">
+        Jhansi, Uttar Pradesh<br>
+        Phone: 8707204178
+      </p>
     </div>
   </div>
-  <p class="copyright">© 2026 JhansiTop Cab Service</p>
+
+  <p class="text-center text-xs mt-10">
+    © 2026 JhansiTop Cab Service. All rights reserved.
+  </p>
 </footer>
 
 </body>
