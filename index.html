@@ -24,6 +24,76 @@
 
 <body class="bg-slate-100 text-slate-900 font-sans">
 
+  <style>
+    /* ===== FOOTER ===== */
+footer{
+  background:linear-gradient(90deg,#020617,#0f172a);
+  color:#cbd5f5;
+  padding:70px 80px 20px;
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:40px;
+}
+
+footer h3, footer h4{
+  color:white;
+  margin-bottom:15px;
+}
+
+footer p, footer a{
+  font-size:14px;
+  color:#cbd5f5;
+  text-decoration:none;
+  margin-bottom:10px;
+  display:block;
+}
+
+footer a:hover{
+  color:#60a5fa;
+}
+
+footer i{
+  margin-right:8px;
+}
+
+.copyright{
+  text-align:center;
+  margin-top:40px;
+  font-size:13px;
+  opacity:0.7;
+}
+
+/* ===== FLOATING BUTTONS ===== */
+.float{
+  position:fixed;
+  bottom:20px;
+  width:52px;
+  height:52px;
+  border-radius:50%;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.25);
+}
+
+.call{
+  right:20px;
+  background:#2563eb;
+}
+
+.whatsapp{
+  right:85px;
+  background:#22c55e;
+}
+  </style>
+
+  
+
 <!-- NAVBAR -->
 <header class="bg-white border-b">
   <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -32,16 +102,16 @@
     </div>
 
     <nav class="hidden md:flex gap-8 text-sm text-slate-600">
-      <a class="text-blue-600 font-medium">Home</a>
-      <a class="hover:text-blue-600 transition">Services</a>
-      <a class="hover:text-blue-600 transition">Our Fleet</a>
-      <a class="hover:text-blue-600 transition">Pricing</a>
-      <a class="hover:text-blue-600 transition">Contact</a>
+      <a href= "" class="text-blue-600 font-medium"></i>Home</a>
+      <a href= "service.html" class="hover:text-blue-600 transition"></i>service</a>
+      <a href= "" class="hover:text-blue-600 transition"></i>Our Fleet</a>
+      <a href= "" class="hover:text-blue-600 transition"></i>Pricing</a>
+      <a href= "" class="hover:text-blue-600 transition"></i>Contact</a>
+      
     </nav>
 
     <button class="bg-yellow-400 hover:bg-yellow-500 transition px-5 py-2 rounded-full text-sm font-semibold">
-      <a href="https://wa.me/918707204178?text=Hello%20I%20want%20to%20book%20a%20cab"
-   target="_blank">Book Now</a>
+      Book Now
     </button>
   </div>
 </header>
@@ -62,12 +132,17 @@
   </p>
 
   <div class="mt-8 flex justify-center gap-4">
-    <a class="call bg-blue-600 hover:bg-blue-700 transition px-7 py-3 rounded-lg font-medium" href="tel:8707204178">
-      Call Now
+    <a class="bg-blue-600 hover:bg-blue-700 transition px-7 py-3 rounded-lg font-medium">
+      Call 8707204178
     </a>
     <a class="border border-white/60 hover:bg-white hover:text-slate-900 transition px-7 py-3 rounded-lg font-medium">
       View Services
     </a>
+    <a href="tel:8707204178">Call Now</a>
+    <a href="https://wa.me/918707204178?text=Hello%20I%20want%20to%20book%20a%20cab"
+   target="_blank">
+   Book on WhatsApp
+   </a>
 
   </div>
 </section>
@@ -156,35 +231,50 @@
 </section>
 
 <!-- FOOTER -->
-<footer class="bg-slate-900 text-slate-400 py-14 px-4">
-  <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-10">
+<footer>
+  <div class="footer-grid">
+
     <div>
-      <h3 class="text-white font-semibold">JhansiTop Cab Service</h3>
-      <p class="text-sm mt-3">
-        Reliable and professional cab services available 24/7.
-      </p>
+      <h3>JHANSI TOP CAB SERVICE</h3>
+      <p>Reliable, safe, and comfortable rides for all your travel needs.
+      Available 24/7 for local & outstation trips.</p>
     </div>
 
     <div>
-      <h4 class="text-white font-medium">Quick Links</h4>
-      <p class="text-sm mt-3">
-        Home · Services · Pricing · Contact
-      </p>
+      <h4>Quick Links</h4>
+      <a href="#">Home</a>
+      <a href="#">Services</a>
+      <a href="#">Our Fleet</a>
+      <a href="#">Pricing</a>
+      <a href="#">Contact</a>
     </div>
 
     <div>
-      <h4 class="text-white font-medium">Contact</h4>
-      <p class="text-sm mt-3">
-        Jhansi, Uttar Pradesh<br>
-        Phone: 8707204178
-      </p>
+      <h4>Our Services</h4>
+      <a href="#">Local City Rides</a>
+      <a href="#">Airport Transfers</a>
+      <a href="#">Outstation Trips</a>
+      <a href="#">Wedding Rental</a>
+      <a href="#">Corporate Travel</a>
     </div>
+
+    <div>
+      <h4>Contact Info</h4>
+      <p><i class="fa fa-location-dot"></i> Jhansi, UP</p>
+      <p><i class="fa fa-phone"></i> 8707204178</p>
+      <p><i class="fa fa-envelope"></i> contact@jhansitopcab.com</p>
+    </div>
+
   </div>
 
-  <p class="text-center text-xs mt-10">
-    © 2026 JhansiTop Cab Service. All rights reserved.
-  </p>
+  <div class="copyright">
+    © 2026 Jhansi Top Cab Service. All rights reserved.
+  </div>
 </footer>
+
+<!-- FLOATING BUTTONS -->
+<a href="tel:8707204178" class="float call"><i class="fa fa-phone"></i></a>
+<a href="https://wa.me/918707204178" class="float whatsapp"><i class="fab fa-whatsapp"></i></a>
 
 </body>
 </html>
