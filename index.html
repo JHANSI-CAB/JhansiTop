@@ -66,55 +66,61 @@ footer i{
   opacity:0.7;
 }
 
-/* ===== FLOATING BUTTONS ===== */
-.float{
-  position:fixed;
-  bottom:20px;
-  width:52px;
-  height:52px;
-  border-radius:50%;
-  color:white;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:22px;
-  box-shadow:0 8px 20px rgba(0,0,0,0.25);
-}
-
-.call{
-  right:20px;
-  background:#2563eb;
-}
-
-.whatsapp{
-  right:85px;
-  background:#22c55e;
-}
   </style>
 
   
 
-<!-- NAVBAR -->
-<header class="bg-white border-b">
-  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-    <div class="text-blue-700 font-semibold tracking-wide">
-      JHANSITOP CAB SERVICE
+
+<body class="bg-gray-100">
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow-md">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex items-center justify-between h-20">
+
+        <!-- Left: Logo + Text -->
+        <div class="flex items-center">
+          <div class="w-17 h-17 rounded-full border flex items-center justify-center">
+            <img src="logo.png" alt="Logo" class="w-10 h-10 object-contain" />
+          </div>
+          <div class="ml-3 leading-tight">
+            <h1 class="text-xl font-extrabold text-blue-600 tracking-wide">
+              JHANSITOP
+            </h1>
+            <p class="text-xs font-semibold text-black tracking-widest">
+              CAB SERVICE
+            </p>
+          </div>
+        </div>
+
+        <!-- Center: Menu -->
+        <div class="hidden md:flex items-center space-x-8 font-medium">
+          <a href="#" class="text-blue-600">Home</a>
+          <a href="#" class="text-gray-600 hover:text-blue-600">Services</a>
+          <a href="#" class="text-gray-600 hover:text-blue-600">Our Fleet</a>
+          <a href="#" class="text-gray-600 hover:text-blue-600">Pricing</a>
+          <a href="#" class="text-gray-600 hover:text-blue-600">Contact</a>
+        </div>
+
+        <!-- Right: Book Now Button -->
+        <div class="hidden md:flex">
+          <a href="#"
+             class="flex items-center gap-2 bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-6 py-3 rounded-full transition">
+            📞 Book Now
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden">
+          <button class="text-gray-700 text-2xl">
+            ☰
+          </button>
+        </div>
+
+      </div>
     </div>
+  </nav>
 
-    <nav class="hidden md:flex gap-8 text-sm text-slate-600">
-      <a href= "" class="text-blue-600 font-medium"></i>Home</a>
-      <a href= "service.html" class="hover:text-blue-600 transition"></i>service</a>
-      <a href= "" class="hover:text-blue-600 transition"></i>Our Fleet</a>
-      <a href= "" class="hover:text-blue-600 transition"></i>Pricing</a>
-      <a href= "" class="hover:text-blue-600 transition"></i>Contact</a>
-      
-    </nav>
-
-    <button class="bg-yellow-400 hover:bg-yellow-500 transition px-5 py-2 rounded-full text-sm font-semibold">
-      Book Now
-    </button>
-  </div>
-</header>
 
 <!-- HERO -->
 <section class="bg-gradient-to-br from-slate-900 to-blue-900 text-white text-center py-28 px-4">
@@ -271,10 +277,6 @@ footer i{
     © 2026 Jhansi Top Cab Service. All rights reserved.
   </div>
 </footer>
-
-<!-- FLOATING BUTTONS -->
-<a href="tel:8707204178" class="float call"><i class="fa fa-phone"></i></a>
-<a href="https://wa.me/918707204178" class="float whatsapp"><i class="fab fa-whatsapp"></i></a>
 
 </body>
 </html>
