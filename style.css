@@ -1,0 +1,218 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: #f4f7fb;
+  color: #111;
+}
+
+/* NAVBAR */
+.navbar {
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 40px;
+}
+
+.logo {
+  font-weight: 700;
+  color: #1e3a8a;
+}
+
+nav a {
+  margin: 0 14px;
+  color: #444;
+  cursor: pointer;
+}
+
+nav .active {
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.book-btn {
+  background: #fbbf24;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(120deg, #0f172a, #1e3a8a);
+  color: white;
+  text-align: center;
+  padding: 90px 20px 120px;
+}
+
+.badge {
+  background: #1e40af;
+  padding: 6px 14px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.hero h1 span {
+  color: #60a5fa;
+}
+
+.hero-actions {
+  margin-top: 25px;
+}
+
+.primary, .secondary {
+  padding: 12px 22px;
+  border-radius: 8px;
+  margin: 5px;
+  display: inline-block;
+}
+
+.primary {
+  background: #2563eb;
+  color: white;
+}
+
+.secondary {
+  border: 1px solid white;
+  color: white;
+}
+
+/* BOOKING */
+.booking-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: -70px;
+}
+
+.booking-card {
+  background: white;
+  width: 85%;
+  max-width: 900px;
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+.booking-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.status {
+  color: green;
+  font-size: 14px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 15px;
+}
+
+.form-grid input {
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.confirm-btn {
+  margin-top: 20px;
+  width: 100%;
+  padding: 16px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.note {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 13px;
+  color: #666;
+}
+
+/* WHY */
+.why {
+  padding: 70px 20px;
+  text-align: center;
+}
+
+.why-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.why-card {
+  background: white;
+  padding: 25px;
+  border-radius: 14px;
+  width: 250px;
+}
+
+/* TESTIMONIALS */
+.testimonials {
+  padding: 70px 20px;
+  text-align: center;
+}
+
+.reviews {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.review-card {
+  background: white;
+  padding: 22px;
+  border-radius: 14px;
+  width: 260px;
+}
+
+/* CTA */
+.cta {
+  background: #2563eb;
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+/* FOOTER */
+footer {
+  background: #0f172a;
+  color: #cbd5e1;
+  padding: 50px 20px 20px;
+}
+
+.footer-grid {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: auto;
+}
+
+footer h3, footer h4 {
+  color: white;
+}
+
+footer p {
+  font-size: 14px;
+}
+
+.copyright {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 13px;
+}
