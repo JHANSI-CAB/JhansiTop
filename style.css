@@ -139,9 +139,8 @@ body {
   }
 }
 
-/* Mobile Navbar */
-
- @media (max-width: 900px) {
+/* ========== MOBILE NAV ========== */
+    @media (max-width: 900px) {
       .nav-links,
       .book-btn {
         display: none;
@@ -369,3 +368,4 @@ footer {
   border: 1px solid white;
   color: white;
 }
+
