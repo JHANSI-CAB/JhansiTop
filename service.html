@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JhansiTop Cab Service – Services</title>
+
+  <style>
+    /* ========== GLOBAL ========== */
+    * {
+      box-sizing: border-box;
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: #f9fafb;
+      color: #1f2937;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ========== NAVBAR ========== */
+    nav {
+      background: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+      position: relative;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo img {
+      width: 40px;
+      height: 40px;
+    }
+
+    .logo h1 {
+      font-size: 20px;
+      font-weight: 800;
+      color: #2563eb;
+      margin: 0;
+    }
+
+    .logo p {
+      font-size: 11px;
+      letter-spacing: 2px;
+      margin: 0;
+      font-weight: 600;
+      color: black;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      font-weight: 500;
+    }
+
+    .nav-links a {
+      color: #4b5563;
+    }
+
+    .nav-links a.active,
+    .nav-links a:hover {
+      color: #2563eb;
+    }
+
+    .book-btn {
+      background: #facc15;
+      padding: 12px 26px;
+      border-radius: 999px;
+      font-weight: 600;
+      color: black;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 26px;
+      cursor: pointer;
+    }
+
+    /* ========== HERO ========== */
+    .hero {
+      height: 360px;
+      background: linear-gradient(135deg, #020617, #1e3a8a);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .hero h1 {
+      color: white;
+      font-size: 48px;
+      margin-bottom: 16px;
+    }
+
+    .hero p {
+      color: #c7d2fe;
+      font-size: 18px;
+      max-width: 650px;
+      margin: auto;
+      line-height: 1.6;
+    }
+
+    /* ========== SERVICES ========== */
+    .services {
+      max-width: 1200px;
+      margin: auto;
+      padding: 80px 24px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+    }
+
+    .card {
+      background: white;
+      padding: 32px;
+      border-radius: 20px;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+      transform: translateY(-4px);
+    }
+
+    .icon {
+      width: 56px;
+      height: 56px;
+      background: #eff6ff;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      margin-bottom: 24px;
+      color: #2563eb;
+    }
+
+    .card h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #4b5563;
+      margin-bottom: 16px;
+    }
+
+    .card ul {
+      padding-left: 0;
+      list-style: none;
+      color: #6b7280;
+      font-size: 14px;
+      margin-bottom: 24px;
+    }
+
+    .card ul li {
+      margin-bottom: 6px;
+    }
+
+    .card a {
+      display: block;
+      text-align: center;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #2563eb;
+      color: #2563eb;
+      transition: 0.3s;
+    }
+
+    .card a:hover {
+      background: #2563eb;
+      color: white;
+      width: 100%;
+    }
+
+    /* ========== FOOTER ========== */
+    footer {
+      background: linear-gradient(90deg, #020617, #0f172a);
+      color: #cbd5f5;
+      padding: 70px 80px 20px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 40px;
+    }
+
+    footer h3, footer h4 {
+      color: white;
+      margin-bottom: 15px;
+    }
+
+    footer p, footer a {
+      font-size: 14px;
+      color: #cbd5f5;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    footer a:hover {
+      color: #60a5fa;
+    }
+
+    .copyright {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 13px;
+      opacity: 0.7;
+    }
+
+    /* ========== MOBILE NAV ========== */
+    @media (max-width: 900px) {
+      .nav-links,
+      .book-btn {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links.mobile {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 20px 0;
+        gap: 16px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-container">
+    <div class="logo">
+      <img src="logo.png" alt="Logo">
+      <div>
+        <h1>JHANSITOP</h1>
+        <p>CAB SERVICE</p>
+      </div>
+    </div>
+
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="service.html">Services</a>
+      <a href="oourfleet.html">Our Fleet</a>
+      <a href="#">Pricing</a>
+      <a href="#">Contact</a>
+    </div>
+
+    <a href="#" class="book-btn">📞 Book Now</a>
+
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <h1>Our Services</h1>
+    <p>
+      Comprehensive travel solutions tailored to your needs.
+      From quick city rides to long-distance journeys.
+    </p>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services">
+  <!-- Repeatable cards -->
+  <div class="card">
+    <div class="icon">🚕</div>
+    <h3>Local City Rides</h3>
+    <p>Convenient point-to-point travel within the city.</p>
+    <ul>
+      <li>• Quick Booking</li>
+      <li>• AC Cabs</li>
+      <li>• Fixed Rates</li>
+    </ul>
+    <a href="#">Book This Service</a>
+  </div>
+
+  <div class="card">
+    <div class="icon">✈️</div>
+    <h3>Airport Transfers</h3>
+    <p>Reliable pickups and drops to the airport.</p>
+    <ul>
+      <li>• Flight Tracking</li>
+      <li>• Meet & Greet</li>
+      <li>• No Wait Charges</li>
+    </ul>
+    <a href="#">Book This Service</a>
+  </div>
+
+  <div class="card">
+    <div class="icon">🗺️</div>
+    <h3>Outstation Trips</h3>
+    <p>Explore nearby cities and tourist destinations.</p>
+    <ul>
+      <li>• Experienced Drivers</li>
+      <li>• Comfortable Cars</li>
+      <li>• Transparent Billing</li>
+    </ul>
+    <a href="#">Book This Service</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h3>JHANSI TOP CAB SERVICE</h3>
+      <p>Reliable, safe, and comfortable rides available 24/7.</p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <a href="#">Home</a>
+      <a href="#">Services</a>
+      <a href="#">Our Fleet</a>
+      <a href="#">Pricing</a>
+      <a href="#">Contact</a>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <p>Jhansi, UP</p>
+      <p>8707204178</p>
+      <p>contact@jhansitopcab.com</p>
+    </div>
+  </div>
+
+  <div class="copyright">
+    © 2026 Jhansi Top Cab Service. All rights reserved.
+  </div>
+</footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("mobile");
+  }
+</script>
+
+</body>
+</html>

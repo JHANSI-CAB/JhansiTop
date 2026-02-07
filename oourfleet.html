@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Our Fleet | Jhansi Top Cab Service</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+/* ========== GLOBAL ========== */
+*{
+  box-sizing:border-box;
+  font-family:"Segoe UI", Arial, sans-serif;
+}
+body{
+  margin:0;
+  background:#f9fafb;
+  color:#1f2937;
+}
+a{text-decoration:none;color:inherit;}
+
+/* ========== NAVBAR ========== */
+nav{
+  background:white;
+  box-shadow:0 2px 10px rgba(0,0,0,0.05);
+}
+.nav-container{
+  max-width:1200px;
+  margin:auto;
+  padding:0 24px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  height:80px;
+  position:relative;
+}
+.logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.logo img{
+  width:40px;
+  height:40px;
+}
+.logo h1{
+  margin:0;
+  font-size:20px;
+  font-weight:800;
+  color:#2563eb;
+}
+.logo p{
+  margin:0;
+  font-size:11px;
+  letter-spacing:2px;
+  font-weight:600;
+  color:black;
+}
+.nav-links{
+  display:flex;
+  gap:32px;
+  font-weight:500;
+}
+.nav-links a{
+  color:#4b5563;
+}
+.nav-links a:hover,
+.nav-links a.active{
+  color:#2563eb;
+}
+.book-btn{
+  background:#facc15;
+  padding:12px 26px;
+  border-radius:999px;
+  font-weight:600;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  color:black;
+}
+.menu-toggle{
+  display:none;
+  font-size:26px;
+  cursor:pointer;
+}
+
+/* ========== HERO ========== */
+.hero{
+  height:360px;
+  background:linear-gradient(135deg,#020617,#1e3a8a);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:0 20px;
+}
+.hero h1{
+  color:white;
+  font-size:48px;
+  margin-bottom:16px;
+}
+.hero p{
+  color:#c7d2fe;
+  font-size:18px;
+  max-width:650px;
+  margin:auto;
+  line-height:1.6;
+}
+
+/* ========== FLEET SECTION ========== */
+.fleet{
+  padding:80px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:40px;
+}
+.card{
+  background:white;
+  border-radius:28px;
+  padding:30px;
+  box-shadow:0 15px 30px rgba(0,0,0,0.08);
+  position:relative;
+}
+.badge{
+  position:absolute;
+  top:20px;
+  right:20px;
+  background:#f1f5f9;
+  padding:6px 14px;
+  border-radius:20px;
+  font-size:12px;
+  font-weight:600;
+}
+.card h3{
+  font-size:22px;
+  margin-bottom:6px;
+}
+.available{
+  color:#64748b;
+  margin-bottom:15px;
+}
+.price{
+  font-size:26px;
+  font-weight:700;
+  color:#2563eb;
+}
+.price span{font-size:14px;}
+.price small{
+  display:block;
+  margin-top:6px;
+  color:#64748b;
+}
+.features{
+  display:flex;
+  justify-content:space-between;
+  margin:26px 0;
+  color:#475569;
+  font-size:14px;
+}
+.card button{
+  width:100%;
+  background:#2563eb;
+  color:white;
+  border:none;
+  padding:14px;
+  border-radius:12px;
+  font-size:16px;
+  cursor:pointer;
+}
+
+/* ========== FOOTER ========== */
+footer{
+  background:linear-gradient(90deg,#020617,#0f172a);
+  color:#cbd5f5;
+  padding:70px 80px 20px;
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:40px;
+}
+footer h3, footer h4{
+  color:white;
+  margin-bottom:15px;
+}
+footer p, footer a{
+  font-size:14px;
+  color:#cbd5f5;
+  display:block;
+  margin-bottom:10px;
+}
+footer a:hover{color:#60a5fa;}
+.copyright{
+  text-align:center;
+  margin-top:40px;
+  font-size:13px;
+  opacity:0.7;
+}
+
+/* ========== RESPONSIVE ========== */
+@media(max-width:900px){
+  .nav-links,.book-btn{display:none;}
+  .menu-toggle{display:block;}
+  .nav-links.mobile{
+    display:flex;
+    flex-direction:column;
+    position:absolute;
+    top:80px;
+    left:0;
+    width:100%;
+    background:white;
+    padding:20px 0;
+    gap:16px;
+    box-shadow:0 10px 20px rgba(0,0,0,0.08);
+  }
+  .fleet{padding:40px;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-container">
+    <div class="logo">
+      <img src="logo.png" alt="Logo">
+      <div>
+        <h1>JHANSITOP</h1>
+        <p>CAB SERVICE</p>
+      </div>
+    </div>
+
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="service.html">Services</a>
+      <a class="active">Our Fleet</a>
+      <a href="#">Pricing</a>
+      <a href="#">Contact</a>
+    </div>
+
+    <a href="#" class="book-btn">📞 Book Now</a>
+
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <h1>Our Fleet</h1>
+    <p>Choose from our wide range of comfortable and well-maintained vehicles.</p>
+  </div>
+</section>
+
+<!-- FLEET -->
+<section class="fleet">
+
+  <div class="card">
+    <span class="badge">PREMIUM SUV</span>
+    <h3>Innova Crysta</h3>
+    <p class="available">Available Now</p>
+    <div class="price">₹16<span>/km</span><small>or ₹5000/day</small></div>
+    <div class="features">
+      <span>7 Seats</span>
+      <span>AC</span>
+      <span>Diesel</span>
+    </div>
+    <button>Book Innova Crysta</button>
+  </div>
+
+  <div class="card">
+    <span class="badge">MUV (CNG)</span>
+    <h3>Ertiga</h3>
+    <p class="available">Available Now</p>
+    <div class="price">₹12<span>/km</span><small>or ₹3500/day</small></div>
+    <div class="features">
+      <span>7 Seats</span>
+      <span>AC</span>
+      <span>Diesel</span>
+    </div>
+    <button>Book Ertiga</button>
+  </div>
+
+  <div class="card">
+    <span class="badge">SUV</span>
+    <h3>Innova</h3>
+    <p class="available">Available Now</p>
+    <div class="price">₹12<span>/km</span><small>or ₹4000/day</small></div>
+    <div class="features">
+      <span>7 Seats</span>
+      <span>AC</span>
+      <span>Diesel</span>
+    </div>
+    <button>Book Innova</button>
+  </div>
+
+  <div class="card">
+    <span class="badge">SEDAN</span>
+    <h3>Dezire</h3>
+    <p class="available">Available Now</p>
+    <div class="price">₹10<span>/km</span><small>or ₹2500/day</small></div>
+    <div class="features">
+      <span>5 Seats</span>
+      <span>AC</span>
+      <span>Diesel</span>
+    </div>
+    <button>Book Dezire</button>
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h3>JHANSI TOP CAB SERVICE</h3>
+      <p>Reliable, safe, and comfortable rides available 24/7.</p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <a href="#">Home</a>
+      <a href="#">Services</a>
+      <a href="#">Our Fleet</a>
+      <a href="#">Pricing</a>
+      <a href="#">Contact</a>
+    </div>
+    <div>
+      <h4>Contact Info</h4>
+      <p>Jhansi, UP</p>
+      <p>8707204178</p>
+      <p>contact@jhansitopcab.com</p>
+    </div>
+  </div>
+
+  <div class="copyright">
+    © 2026 Jhansi Top Cab Service. All rights reserved.
+  </div>
+</footer>
+
+<script>
+function toggleMenu(){
+  document.getElementById("navLinks").classList.toggle("mobile");
+}
+</script>
+
+</body>
+</html>
