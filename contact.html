@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -84,6 +85,38 @@
 .nav-links a.active{
   color:#2563eb;
 }
+.nav-links {
+  position: relative;
+  display: flex;
+  gap: 32px;
+  font-weight: 500;
+}
+
+.nav-links a {
+  padding: 8px 0;
+  position: relative;
+  color: #4b5563;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #2563eb;
+}
+
+.nav-links a.active {
+  color: #2563eb;
+}
+
+/* Sliding Indicator */
+.nav-indicator {
+  position: absolute;
+  bottom: 0;
+  height: 3px;
+  background: #2563eb;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
 
     .book-btn {
       background: #facc15;
@@ -277,12 +310,15 @@
     </div>
 
     <div class="nav-links" id="navLinks">
-      <a href="index.html">Home</a>
-      <a href="service.html">Services</a>
-      <a href="oourfleet.html">Our Fleet</a>
-      <a href="pricing.html">Pricing</a>
-      <a href="contact.html">Contact</a>
-    </div>
+  <span class="nav-indicator"></span>
+
+  <a href="index.html">Home</a>
+  <a href="service.html">Services</a>
+  <a href="oourfleet.html">Our Fleet</a>
+  <a href="pricing.html">Pricing</a>
+  <a href="contact.html" class="active">Contact</a>
+</div>
+
 
     <a href="#" class="book-btn">📞 Book Now</a>
 
@@ -383,23 +419,36 @@
   function toggleMenu() {
     document.getElementById("navLinks").classList.toggle("mobile");
   }
-  
-  // Active link color change on click
-  const navLinks = document.querySelectorAll(".nav-links a");
 
-  navLinks.forEach(link => {
+  const links = document.querySelectorAll(".nav-links a");
+  const indicator = document.querySelector(".nav-indicator");
+
+  function moveIndicator(element) {
+    indicator.style.width = element.offsetWidth + "px";
+    indicator.style.left = element.offsetLeft + "px";
+  }
+
+  // Set default active position
+  const activeLink = document.querySelector(".nav-links a.active");
+  if (activeLink) {
+    moveIndicator(activeLink);
+  }
+
+  links.forEach(link => {
     link.addEventListener("click", function () {
-
-      // Remove active from all links
-      navLinks.forEach(nav => nav.classList.remove("active"));
-
-      // Add active to clicked link
+      links.forEach(l => l.classList.remove("active"));
       this.classList.add("active");
+      moveIndicator(this);
     });
   });
 
-
+  // Fix position on window resize
+  window.addEventListener("resize", () => {
+    const active = document.querySelector(".nav-links a.active");
+    if (active) moveIndicator(active);
+  });
 </script>
+
 
 </body>
 </html>
