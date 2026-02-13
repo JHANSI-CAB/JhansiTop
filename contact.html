@@ -383,10 +383,27 @@
   function toggleMenu() {
     document.getElementById("navLinks").classList.toggle("mobile");
   }
+  
+  // Active link color change on click
+  const navLinks = document.querySelectorAll(".nav-links a");
+
+  navLinks.forEach(link => {
+    link.addEventListener("click", function () {
+
+      // Remove active from all links
+      navLinks.forEach(nav => nav.classList.remove("active"));
+
+      // Add active to clicked link
+      this.classList.add("active");
+    });
+  });
+
+
 </script>
 
 </body>
 </html>
+
 
 
 
