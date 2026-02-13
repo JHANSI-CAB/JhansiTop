@@ -128,6 +128,38 @@ body {
     padding: 15px;
     border-bottom: 1px solid #eee;
   }
+   .nav-links {
+  position: relative;
+  display: flex;
+  gap: 32px;
+  font-weight: 500;
+}
+
+.nav-links a {
+  padding: 8px 0;
+  position: relative;
+  color: #4b5563;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #2563eb;
+}
+
+.nav-links a.active {
+  color: #2563eb;
+}
+
+/* Sliding Indicator */
+.nav-indicator {
+  position: absolute;
+  bottom: 0;
+  height: 3px;
+  background: #2563eb;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
 
   .menu-btn {
     display: block;
@@ -368,4 +400,5 @@ footer {
   border: 1px solid white;
   color: white;
 }
+
 
