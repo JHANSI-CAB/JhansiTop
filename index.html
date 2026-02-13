@@ -21,7 +21,8 @@
     </div>
 
     <div class="nav-links" id="navLinks">
-      <a href="index.html">Home</a>
+      <span class = "nav-indicator"></span>
+      <a class = "active">Home</a>
       <a href="service.html">Services</a>
       <a href="oourfleet.html">Our Fleet</a>
       <a href="pricing.html">Pricing</a>
@@ -131,7 +132,37 @@
   function toggleMenu() {
     document.getElementById("navLinks").classList.toggle("mobile");
   }
+
+  const links = document.querySelectorAll(".nav-links a");
+  const indicator = document.querySelector(".nav-indicator");
+
+  function moveIndicator(element) {
+    indicator.style.width = element.offsetWidth + "px";
+    indicator.style.left = element.offsetLeft + "px";
+  }
+
+  // Set default active position
+  const activeLink = document.querySelector(".nav-links a.active");
+  if (activeLink) {
+    moveIndicator(activeLink);
+  }
+
+  links.forEach(link => {
+    link.addEventListener("click", function () {
+      links.forEach(l => l.classList.remove("active"));
+      this.classList.add("active");
+      moveIndicator(this);
+    });
+  });
+
+  // Fix position on window resize
+  window.addEventListener("resize", () => {
+    const active = document.querySelector(".nav-links a.active");
+    if (active) moveIndicator(active);
+  });
 </script>
+
 </body>
 </html>
+
 
