@@ -21,12 +21,6 @@ body {
   color: #111;
 }
 
-.input-box {
-  position: relative;
-  width: 300px;
-  margin-bottom: 20px;
-}
-
 .suggestions {
   position: absolute;
   width: 100%;
@@ -429,6 +423,7 @@ footer {
   border: 1px solid white;
   color: white;
 }
+
 
 
 
