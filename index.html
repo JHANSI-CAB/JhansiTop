@@ -64,11 +64,11 @@
       <div id="drop-list" class="suggestions"></div>
       </div>
 
-    <input type="date">
-    <input type="tel" placeholder="Mobile Number">
+    <input type="date" id="date">
+    <input type="tel" id= "mobile" placeholder="Mobile Number">
   </div>
 
-  <button class="btn primary full">Confirm Ride</button>
+  <button class="btn primary full" onclick="sendToWhatsApp()" >Confirm Ride</button>
 </section>
 
 <!-- WHY CHOOSE US -->
@@ -216,6 +216,36 @@
   setupAutocomplete("pickup", "pickup-list");
   setupAutocomplete("drop", "drop-list");
 
+  <script>
+function sendToWhatsApp() {
+
+  var pickup = document.getElementById("pickup").value;
+  var drop = document.getElementById("drop").value;
+  var date = document.getElementById("date").value;
+  var mobile = document.getElementById("mobile").value;
+  var message = document.getElementById("message").value;
+
+  if(pickup === "" || drop === "" || date === "" || mobile === "") {
+    alert("Please fill all required fields!");
+    return;
+  }
+
+  var phoneNumber = "917652073684"; // 👉 Replace with your WhatsApp number (with country code)
+
+  var whatsappMessage =
+    "🚖 New Ride Booking %0A%0A" +
+    "📍 Pickup: " + pickup + "%0A" +
+    "📍 Drop: " + drop + "%0A" +
+    "📅 Date: " + date + "%0A" +
+    "📞 Customer Mobile: " + mobile + "%0A" +
+    "📝 Message: " + message;
+
+  var whatsappURL = "https://wa.me/" + phoneNumber + "?text=" + whatsappMessage;
+
+  window.open(whatsappURL, "_blank");
+}
+</script>
+
 
  
 </script>
@@ -223,6 +253,7 @@
 
 </body>
 </html>
+
 
 
 
