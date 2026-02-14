@@ -237,18 +237,22 @@
   "📅 Date: " + date + "\n" +
   "📞 Customer Mobile: " + mobile
 );
+    var confirmSend = confirm("You will be redirected to WhatsApp to send booking details. Continue?");
 
 
-  var whatsappURL = "https://wa.me/" + phoneNumber + "?text=" + whatsappMessage;
+if (confirmSend) {
+    window.open("https://wa.me/" + phoneNumber + "?text=" + whatsappMessage, "_blank");
 
-  window.open(whatsappURL, "_blank");
-}
+    alert("WhatsApp opened successfully! Please click SEND to confirm your ride.");
+  }
+ }
 
 </script>
 
 
 </body>
 </html>
+
 
 
 
