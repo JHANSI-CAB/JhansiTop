@@ -21,6 +21,33 @@ body {
   color: #111;
 }
 
+.input-box {
+  position: relative;
+  width: 300px;
+  margin-bottom: 20px;
+}
+
+.suggestions {
+  position: absolute;
+  width: 100%;
+  background: white;
+  border: 1px solid #ccc;
+  border-top: none;
+  max-height: 150px;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.suggestions div {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.suggestions div:hover {
+  background: #f0f0f0;
+}
+
+
 /* NAVBAR */
   nav {
       background: white;
@@ -402,5 +429,6 @@ footer {
   border: 1px solid white;
   color: white;
 }
+
 
 
