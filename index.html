@@ -68,7 +68,7 @@
     <input type="tel" id= "mobile" placeholder="Mobile Number">
   </div>
 
-  <button class="btn primary full" onclick="sendToWhatsApp()" >Confirm Ride</button>
+  <button onclick="sendToWhatsApp()" >Confirm Ride</button>
 </section>
 
 <!-- WHY CHOOSE US -->
@@ -223,7 +223,6 @@ function sendToWhatsApp() {
   var drop = document.getElementById("drop").value;
   var date = document.getElementById("date").value;
   var mobile = document.getElementById("mobile").value;
-  var message = document.getElementById("message").value;
 
   if(pickup === "" || drop === "" || date === "" || mobile === "") {
     alert("Please fill all required fields!");
@@ -253,6 +252,7 @@ function sendToWhatsApp() {
 
 </body>
 </html>
+
 
 
 
