@@ -6,6 +6,7 @@
   <title>Jhansi Top Cab Service</title>
 
   <link rel="stylesheet" href="style.css" />
+
 </head>
 <body>
 
@@ -53,8 +54,18 @@
   <h3>Quick Booking</h3>
 
   <div class="booking-form">
-    <input type="text" placeholder="Pickup Location">
-    <input type="text" placeholder="Drop Location">
+    
+    <div class="input-box">
+      <input type="text" id="pickup" placeholder="Pickup Location" autocomplete="off">
+      <div id="pickup-list" class="suggestions"></div>
+    </div>
+
+    <div class="input-box">
+      <input type="text" id="drop" placeholder="Drop Location" autocomplete="off">
+      <div id="drop-list" class="suggestions"></div>
+    </div>
+
+
     <input type="date">
     <input type="tel" placeholder="Mobile Number">
   </div>
@@ -162,11 +173,58 @@
     const active = document.querySelector(".nav-links a.active");
     if (active) moveIndicator(active);
   });
+
+  const locations = [
+    "Delhi",
+    "Mumbai",
+    "Kolkata",
+    "Chennai",
+    "Bangalore",
+    "Hyderabad",
+    "Lucknow",
+    "Kanpur",
+    "Jaipur",
+    "Bhopal",
+    "Pune",
+    "Ahmedabad"
+  ];
+
+  function setupAutocomplete(inputId, listId) {
+    const input = document.getElementById(inputId);
+    const list = document.getElementById(listId);
+
+    input.addEventListener("input", function () {
+      const value = this.value.toLowerCase();
+      list.innerHTML = "";
+
+      if (!value) return;
+
+      const filtered = locations.filter(loc =>
+        loc.toLowerCase().startsWith(value)
+      );
+
+      filtered.forEach(loc => {
+        const div = document.createElement("div");
+        div.textContent = loc;
+        div.addEventListener("click", function () {
+          input.value = loc;
+          list.innerHTML = "";
+        });
+        list.appendChild(div);
+      });
+    });
+  }
+
+  setupAutocomplete("pickup", "pickup-list");
+  setupAutocomplete("drop", "drop-list");
+
+
+ 
 </script>
+
 
 </body>
 </html>
-
 
 
 
