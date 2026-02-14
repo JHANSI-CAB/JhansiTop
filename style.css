@@ -21,10 +21,16 @@ body {
   color: #111;
 }
 
+.input-box {
+  position: relative;
+  width:250;
+  margin-bottom: 20px;
+}
+
 .suggestions {
-  position: absolute;
+  position :absolute;
   width: 100%;
-  background: white;
+  background: rgb(202, 199, 199);
   border: 1px solid #ccc;
   border-top: none;
   max-height: 150px;
@@ -423,7 +429,6 @@ footer {
   border: 1px solid white;
   color: white;
 }
-
 
 
 
