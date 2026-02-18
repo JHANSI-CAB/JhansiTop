@@ -364,11 +364,11 @@
       <h2>Send us a message</h2>
 
       <form>
-        <input type="text" placeholder="Full Name" required />
-        <input type="email" placeholder="Email Address" required />
-        <input type="tel" placeholder="Phone (Optional)" />
-        <textarea placeholder="How can we help you?" required></textarea>
-        <button type="submit">Send Message</button>
+        <input type="text" id="name" placeholder="Full Name" required />
+        <input type="email" id="mail" placeholder="Email Address" required />
+        <input type="tel" id="number" placeholder="Phone (Optional)" />
+        <textarea type="text" id="messg" placeholder="How can we help you?" required></textarea>
+        <button class = "btn primary full">Send Message</button>
       </form>
     </div>
 
@@ -447,11 +447,44 @@
     const active = document.querySelector(".nav-links a.active");
     if (active) moveIndicator(active);
   });
+
+   function sendToWhatsApp() {
+
+  var neme = document.getElementById("name").value;
+  var gmail = document.getElementById("mail").value;
+  var message = document.getElementById("messg").value;
+  var numbar = document.getElementById("number").value;
+
+  if (neme === "" || gmail === "" || message === "" || numbar === "") {
+    alert("Please fill all required fields!");
+    return;
+  }
+
+  var phoneNumber = "918707304178"; // Your WhatsApp number
+
+  var whatsappMessage = encodeURIComponent(
+  "🚖 New Ride Booking\n\n" +
+  "📍 Name: " + neme + "\n" +
+  "📍 Gmail: " + gmail + "\n" +
+  "📅 Message: " + message + "\n" +
+  "📞 Mobile no: " + numbar
+);
+    var confirmSend = confirm("You will be redirected to WhatsApp to send booking details. Continue?");
+
+
+if (confirmSend) {
+    window.open("https://wa.me/" + phoneNumber + "?text=" + whatsappMessage, "_blank");
+
+    alert("WhatsApp opened successfully! Please click SEND to confirm your ride.");
+  }
+ }
+  
 </script>
 
 
 </body>
 </html>
+
 
 
 
