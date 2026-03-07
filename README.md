@@ -17,5 +17,5 @@ Jhansi Top Cab Service is more than just a ride—it’s a promise of comfort, r
 Mission
 To redefine cab services in Jhansi by combining technology, safety, and customer satisfaction, ensuring every trip feels effortless and enjoyable.
 
-Would you like me to make this more recruiter-style professional (like a portfolio README with badges and visuals), or keep it simple and customer-facing for the website?
+Would you like me to make this more recruiter-style professional (like a portfolio README with badges and visuals), or keep it simple and customer-facing for the website
 
