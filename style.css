@@ -290,7 +290,7 @@ body {
 .booking-form input {
   padding: 12px;
   border-radius: 8px;
-  border: 1px solid #ccc;
+  border: 0px solid #ccc;
 }
 
 /* FOOTER */
@@ -428,6 +428,7 @@ footer {
   border: 1px solid white;
   color: white;
 }
+
 
 
 
