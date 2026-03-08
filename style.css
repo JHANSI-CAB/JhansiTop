@@ -277,7 +277,7 @@ body {
   max-width: 900px;
   margin: -60px auto 50px;
   padding: 30px;
-  border-radius: 14px;
+  border-radius: 0px;
   box-shadow: 0 15px 30px rgba(0,0,0,0.15);
 }
 
@@ -429,6 +429,7 @@ footer {
   border: 1px solid white;
   color: white;
 }
+
 
 
 
