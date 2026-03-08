@@ -22,7 +22,7 @@ body {
 }
 
 .input-box {
-  position: relative;
+  position: flex;
   width:250;
   margin-bottom: 20px;
 }
@@ -429,6 +429,7 @@ footer {
   border: 1px solid white;
   color: white;
 }
+
 
 
 
