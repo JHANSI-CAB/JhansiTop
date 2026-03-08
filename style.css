@@ -291,6 +291,7 @@ body {
   padding: 12px;
   border-radius: 8px;
   border: 0px solid #ccc;
+   width: 370px;
 }
 
 /* FOOTER */
@@ -428,6 +429,7 @@ footer {
   border: 1px solid white;
   color: white;
 }
+
 
 
 
