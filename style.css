@@ -29,7 +29,6 @@ body {
 
 .suggestions {
   position :absolute;
-  width: 100%;
   background: rgb(202, 199, 199);
   border: 1px solid #ccc;
   border-top: none;
@@ -429,6 +428,7 @@ footer {
   border: 1px solid white;
   color: white;
 }
+
 
 
 
